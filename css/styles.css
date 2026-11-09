@@ -1,0 +1,136 @@
+
+:root {
+    --bg: #f3f6fb;
+    --surface: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --primary: #3158a7;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+.site-header {
+    padding: 55px 0;
+    background: #172c50;
+    color: white;
+    text-align: center;
+}
+
+    .site-header h1 {
+        margin: 8px 0;
+        font-size: 35px;
+    }
+
+    .site-header p {
+        color: #d4dfef;
+    }
+
+.eyebrow {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+main {
+    padding-top: 45px;
+    padding-bottom: 65px;
+}
+
+    main h2 {
+        margin: 0 0 10px;
+    }
+
+.description {
+    margin-bottom: 28px;
+    color: var(--muted);
+}
+
+.task-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.task-card {
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    background: var(--surface);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 3px 14px #172c500d;
+    transition: transform 0.2s ease;
+}
+
+    .task-card:hover {
+        transform: translateY(-4px);
+    }
+
+.task-number {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.task-card h3 {
+    margin: 12px 0 8px;
+    font-size: 19px;
+}
+
+.task-card p {
+    flex-grow: 1;
+    color: var(--muted);
+}
+
+.task-link {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 11px 18px;
+    background: var(--primary);
+    border-radius: 7px;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+    .task-link:hover {
+        background: #234480;
+    }
+
+.site-footer {
+    padding: 25px;
+    background: #172c50;
+    color: #d4dfef;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    .task-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .task-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .site-header h1 {
+        font-size: 27px;
+    }
+}
